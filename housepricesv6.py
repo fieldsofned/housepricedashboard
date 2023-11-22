@@ -23,6 +23,7 @@ import plotly.graph_objs as go
 from dash_bootstrap_components.themes import UNITED
 from dash_bootstrap_templates import load_figure_template
 import numpy as np
+import dash_auth
 
 # Start Dash app -----------------------------------------------------------
 # The external stylesheet is a bootstrap template
@@ -603,4 +604,5 @@ def update(val):
     return None
 
 
-app.run_server
+if __name__ == '__main__':
+    app.run_server(debug=False)
