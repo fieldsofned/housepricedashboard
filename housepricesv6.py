@@ -10,13 +10,6 @@
 
 # TO DO:
 
-#Fix bug where if you select a LA then move to another region, the new region is not coloured in
-#Also fix issue where if you double click then it zooms out 
-#update tool tip
-#check data
-#UPLOAD
-
-
 
 # Set up imports:
 import json
@@ -34,6 +27,8 @@ import numpy as np
 # Start Dash app -----------------------------------------------------------
 # The external stylesheet is a bootstrap template
 app = dash.Dash(external_stylesheets=[dbc.themes.UNITED])
+server = app.server
+
 load_figure_template("UNITED")
 
 #List of colours to use in design:
@@ -608,4 +603,4 @@ def update(val):
     return None
 
 
-app.run_server(debug=True)
+app.run_server
