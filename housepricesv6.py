@@ -27,7 +27,7 @@ import dash_auth
 
 # Start Dash app -----------------------------------------------------------
 # The external stylesheet is a bootstrap template
-app = dash.Dash(external_stylesheets=[dbc.themes.UNITED])
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.UNITED])
 server = app.server
 
 load_figure_template("UNITED")
