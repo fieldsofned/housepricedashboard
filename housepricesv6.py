@@ -10,7 +10,6 @@
 
 # TO DO:
 
-
 # Set up imports:
 import json
 import dash
@@ -24,6 +23,7 @@ from dash_bootstrap_components.themes import UNITED
 from dash_bootstrap_templates import load_figure_template
 import numpy as np
 import dash_auth
+
 
 # Start Dash app -----------------------------------------------------------
 # The external stylesheet is a bootstrap template
@@ -456,16 +456,16 @@ def createbarchart(region, year, selectedData):
 
             #--------------to figure out average regional % increase
             avg_earninglist_selectedyear = df2[earningcolname].dropna().tolist()
-            mean_earnings_selected_year = statistics.geometric_mean(avg_earninglist_selectedyear)
+            mean_earnings_selected_year = np.mean(avg_earninglist_selectedyear)
 
             avg_houselist_selectedyear = df2[housecolname].dropna().tolist()
-            mean_house_selected_year = statistics.geometric_mean(avg_houselist_selectedyear)
+            mean_house_selected_year = np.mean(avg_houselist_selectedyear)
 
             avg_earninglist_2010 = df2["2010_x"].dropna().tolist()
-            mean_earnings_2010 = statistics.geometric_mean (avg_earninglist_2010)
+            mean_earnings_2010 = np.mean(avg_earninglist_2010)
 
             avg_houselist_2010 = df2["2010_y"].dropna().tolist()
-            mean_house_2010 = statistics.geometric_mean(avg_houselist_2010)
+            mean_house_2010 = np.mean(avg_houselist_2010)
 
             region_percent_earning_increase = ((mean_earnings_selected_year - mean_earnings_2010)/mean_earnings_2010) * 100
             region_percent_house_increase = ((mean_house_selected_year - mean_house_2010)/mean_house_2010) * 100
@@ -570,16 +570,16 @@ def removebarchart(region, year, selectedData):
 
         #--------------to figure out average regional % increase
         avg_earninglist_selectedyear = df2[earningcolname].dropna().tolist()
-        mean_earnings_selected_year = statistics.geometric_mean(avg_earninglist_selectedyear)
+        mean_earnings_selected_year = np.mean(avg_earninglist_selectedyear)
 
         avg_houselist_selectedyear = df2[housecolname].dropna().tolist()
-        mean_house_selected_year = statistics.geometric_mean(avg_houselist_selectedyear)
+        mean_house_selected_year = np.mean(avg_houselist_selectedyear)
 
         avg_earninglist_2010 = df2["2010_x"].dropna().tolist()
-        mean_earnings_2010 = statistics.geometric_mean (avg_earninglist_2010)
+        mean_earnings_2010 = np.mean(avg_earninglist_2010)
 
         avg_houselist_2010 = df2["2010_y"].dropna().tolist()
-        mean_house_2010 = statistics.geometric_mean(avg_houselist_2010)
+        mean_house_2010 = np.mean(avg_houselist_2010)
 
         region_percent_earning_increase = ((mean_earnings_selected_year - mean_earnings_2010)/mean_earnings_2010) * 100
         region_percent_house_increase = ((mean_house_selected_year - mean_house_2010)/mean_house_2010) * 100
