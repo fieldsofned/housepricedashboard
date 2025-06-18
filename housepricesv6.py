@@ -201,25 +201,45 @@ graph_bar = html.Div([
 
 # set up app layout ------------------------------------------------------------------------------
 
+# app.layout = dbc.Container(children=[
+#     dbc.Row([
+#         dbc.Col(title, width = 12)
+#     ]),
+
+#     dbc.Row([
+#         dbc.Col(region_filter, width = 2),
+#         dbc.Col(year_filter, width = 2),
+#         dbc.Col(width = 3),
+#         dbc.Col(region_title, width = 5)
+#     ]),
+
+#     dbc.Row(
+#         [
+#             dbc.Col(graph_bar, width = 7),
+#             dbc.Col(breakdownbar,
+#                     width=5)
+#         ])
+# ], fluid=True)
 app.layout = dbc.Container(children=[
     dbc.Row([
-        dbc.Col(title, width = 12)
+        dbc.Col(title, width=12)
     ]),
 
     dbc.Row([
-        dbc.Col(region_filter, width = 2),
-        dbc.Col(year_filter, width = 2),
-        dbc.Col(width = 3),
-        dbc.Col(region_title, width = 5)
-    ]),
+        dbc.Col(region_filter, md=2),
+        dbc.Col(year_filter, md=2),
+        dbc.Col(region_title, md=8)
+    ], className="mb-3"),
 
-    dbc.Row(
-        [
-            dbc.Col(graph_bar, width = 7),
-            dbc.Col(breakdownbar,
-                    width=5)
-        ])
+    dbc.Row([
+        dbc.Col(graph_bar, md=7),
+        dbc.Col(breakdownbar, md=5)
+    ], className="g-0")  # g-0 removes column gutter if needed
 ], fluid=True)
+
+
+
+
 
 # choropleth graph creation and callback based on region -----------------------------------------------------------
 
