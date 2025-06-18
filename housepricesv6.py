@@ -179,11 +179,25 @@ breakdownbar = html.Div(
 
 #---------------set up choropleth graph content and style
 
-graph_bar = html.Div ([
-    html.Div(dcc.Graph(id='graph',
-                       style = {'width': '50vw', 'height': '70vh', "margin-left": "5px"}, config= {'displayModeBar': False}),
-             style={'width': '100%', 'position':'relative'})
+# graph_bar = html.Div ([
+#     html.Div(dcc.Graph(id='graph',
+#                        style = {'width': '50vw', 'height': '70vh', "margin-left": "5px"}, config= {'displayModeBar': False}),
+#              style={'width': '100%', 'position':'relative'})
+# ])
+
+graph_bar = html.Div([
+    html.Div(
+        dcc.Graph(
+            id='graph',
+            style={'height': '70vh', 'width': '100%'},
+            config={'displayModeBar': False}
+        ),
+        style={'width': '100%', 'position': 'relative'}
+    )
 ])
+
+
+
 
 # set up app layout ------------------------------------------------------------------------------
 
