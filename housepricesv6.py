@@ -638,7 +638,6 @@
 #     app.run_server(debug=False)
 
 
-
 import json
 import dash
 import pandas as pd
@@ -697,7 +696,7 @@ year_filter = html.Div([
     dcc.Dropdown(id='year_picker', options=years_options_list, value="2021", clearable=False)
 ])
 
-region_title = html.H2(id="click-output2")
+region_title = html.H2(id="click-output2", style={"marginLeft": "30px"})
 
 breakdownbar = html.Div([
     html.P(id="click-output3", className="lead"),
@@ -899,4 +898,3 @@ def createbarchart(region, year, selectedData):
 
     except Exception:
         return {}
-
