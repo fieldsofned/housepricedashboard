@@ -171,7 +171,7 @@ breakdownbar = html.Div(
         html.Hr(id = "line_break"),
         html.P(id = "click-output", className= "lead"),
         html.Div(id = "barchartcontainer", children =[
-        dcc.Graph(id="barchart", style= {'width': '38vw', 'height': '40vh'}, config= {'displayModeBar': False})]),
+        dcc.Graph(id="barchart", config= {'displayModeBar': False})]),
         html.P("Local authorities with missing data have been excluded", style = {'fontSize': 15, 'position': 'fixed', 'bottom': 1})
     ],
     style = {"padding": "2rem 2rem 2rem", "margin-right": "15px"}
@@ -189,7 +189,6 @@ graph_bar = html.Div([
     html.Div(
         dcc.Graph(
             id='graph',
-            style={'height': '70vh', 'width': '100%'},
             config={'displayModeBar': False}
         ),
         style={'width': '100%', 'position': 'relative'}
@@ -236,9 +235,6 @@ app.layout = dbc.Container(children=[
         dbc.Col(breakdownbar, md=5)
     ], className="g-0")  # g-0 removes column gutter if needed
 ], fluid=True)
-
-
-
 
 
 # choropleth graph creation and callback based on region -----------------------------------------------------------
